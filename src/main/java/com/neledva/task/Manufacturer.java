@@ -1,5 +1,7 @@
 package com.neledva.task;
 
+import java.util.Objects;
+
 public class Manufacturer {
 
     private String manufacName;
@@ -32,5 +34,19 @@ public class Manufacturer {
                 "manufacName='" + manufacName + '\'' +
                 ", country='" + country + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Manufacturer that = (Manufacturer) o;
+        return Objects.equals(manufacName, that.manufacName) &&
+                Objects.equals(country, that.country);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(manufacName, country);
     }
 }

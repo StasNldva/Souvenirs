@@ -1,6 +1,7 @@
 package com.neledva.task;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Souvenir {
 
@@ -56,5 +57,21 @@ public class Souvenir {
                 ", manufacturer=" + manufacturer +
                 ", date=" + date +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Souvenir souvenir = (Souvenir) o;
+        return Double.compare(souvenir.price, price) == 0 &&
+                Objects.equals(name, souvenir.name) &&
+                Objects.equals(manufacturer, souvenir.manufacturer) &&
+                Objects.equals(date, souvenir.date);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, price, manufacturer, date);
     }
 }
