@@ -1,0 +1,2 @@
+Test Souvenir 1;10.0;Test Manufacturer 1;Test Country 1;2023-01-01
+Test Souvenir 2;20.0;Test Manufacturer 2;Test Country 2;2023-02-02
