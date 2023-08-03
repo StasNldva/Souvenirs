@@ -18,20 +18,13 @@ public class Main {
 
         List<Souvenir> souvenirs = ReadFile.loadFromFile(filename);
 
-        System.out.println("Усі сувеніри та виробники:");
+        System.out.println("All souvenirs && manufactures:");
         for (Souvenir souvenir : souvenirs) {
             System.out.println(souvenir);
         }
 
         Souvenir souvenirToUpdate = souvenirs.get(0);
-        instance.updateSouvenir(souvenirToUpdate, "Оновлений сувенір", 75.0, LocalDate.of(2022, 12, 25));
-
-        Manufacturer manufacturerToSearch = new Manufacturer("Приватбанк", "Україна");
-        List<Souvenir> souvenirsByManufacturer = instance.getSouvenirsByManufacturer(manufacturerToSearch);
-        System.out.println("\nСувеніри виробника '" + manufacturerToSearch.getManufacName() + "':");
-        for (Souvenir souvenir : souvenirsByManufacturer) {
-            System.out.println(souvenir);
-        }
+        instance.updateSouvenir(souvenirToUpdate, "Update", 75.0, LocalDate.of(2022, 12, 25));
 
         WriteFile.saveToFile(souvenirs, filename1);
     }
